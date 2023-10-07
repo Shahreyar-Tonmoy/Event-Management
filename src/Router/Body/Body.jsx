@@ -5,7 +5,7 @@ const Body = () => {
         <div style={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundImage: `url(${backgroundImage})` }} className='h-[72vh]'>
             <div className="hero h-full">
                 <div className="hero-overlay bg-opacity-50"></div>
-                <div className="hero-content  text-neutral-content flex items-center gap-72 ">
+                <div className="hero-content  text-neutral-content lg:flex items-center lg:gap-72 ">
                     <img data-aos="zoom-in-right" className='w-96' src="/src/assets/90577613768-removebg-preview.png" alt="" />
                     <div data-aos="zoom-in-left">
                     <h1 className='text-2xl'>

@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { CiStopwatch,CiLocationOn } from 'react-icons/ci';
 
 const EventCard = ({ EventData }) => {
     const { cover, title, date, mounth, place, time, details } = EventData
 
     return (
-        <div>
+        <div data-aos="zoom-in-down">
             <hr className='border my-5' />
             <div className="card card-side ">
                 <div className="ml-10 flex justify-center items-center text-center">

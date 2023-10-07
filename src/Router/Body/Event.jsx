@@ -16,10 +16,13 @@ const Event = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto gap-7 grid ">
+        <div className="max-w-screen-xl mx-auto px-20 ">
+            <h1 className="text-4xl mt-20 mb-3">Events</h1>
+            <h1 className="mb-14">Upcoming Education Events to feed your brain.</h1>
+
 
             {
-                eventData?.map(data => <EventCard key={data?.id} EventData={data}></EventCard>)
+                eventData?.map(data => <EventCard  key={data?.id} EventData={data}></EventCard>)
             }
         </div>
     )

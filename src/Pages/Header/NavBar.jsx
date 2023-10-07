@@ -1,13 +1,27 @@
 
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Login/Firebase/AuthProvider';
 
 
 const NavBar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const hendleSignOut = () => {
+        logOut()
+            .then(() =>
+                console.log("logout done"))
+            .catch(error => console.log(error.massage))
+    }
+
+
+
     return (
         <div>
 
 
-            <div className="navbar md:px-8">
+            <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown dropdown-start">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -41,7 +55,7 @@ const NavBar = () => {
                             </li>
                             <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                                 <NavLink
-                                    to="/Statistics"
+                                    to="/Event"
                                     className={({ isActive, isPending }) =>
                                         isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
                                     }
@@ -57,6 +71,16 @@ const NavBar = () => {
                                     }
                                 >
                                     Contact
+                                </NavLink>
+                            </li>
+                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                <NavLink
+                                    to="/Register"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                    }
+                                >
+                                    Register
                                 </NavLink>
                             </li>
                             <li>
@@ -135,7 +159,7 @@ const NavBar = () => {
                         </li>
                         <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                             <NavLink
-                                to="/Statistics"
+                                to="/Event"
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
                                 }
@@ -153,32 +177,77 @@ const NavBar = () => {
                                 Contact
                             </NavLink>
                         </li>
+                        {
+                            user ? "" : (<>
+                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                            <NavLink
+                                to="/Register"
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                }
+                            >
+                                Register
+                            </NavLink>
+                        </li>
+                            </>)
+                        }
+                        {
+                            user ? (
+                                <>
+                                    <li onClick={hendleSignOut} className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                        <NavLink
+                                            to="/SignIn"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                            }
+                                        >
+                                            Sign Out
+                                        </NavLink>
+                                    </li>
 
+                                </>
+                            ) : (<>
+                                <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                    <NavLink
+                                        to="/SignIn"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        }
+                                    >
+                                        Sign In
+                                    </NavLink>
+                                </li>
+
+                            </>)
+                        }
+
+                        {
+                            user ?(
+                                <>
+                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                            {user?.displayName}
+                        </li>
+                            </>
+                            ) : ""
+                        }
+                        
                         <li>
                             {/* img section */}
                             <div className="flex-none">
 
 
-                                <div className="dropdown dropdown-end">
+                                {
+                                    user && (<>
+                                    <div className="">
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                        <div className="w-10 rounded-full">
-                                            <img src="/src/assets/Md Mubtashim Shahreyar Tonmoy.png" />
-                                        </div>
+                                    <div className="w-10 rounded-full">
+                                                    <img src={user.photoURL} />
+                                                </div>
                                     </label>
-                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-
-                                        <li>
-                                            <NavLink
-                                                to="/Login"
-                                                className={({ isActive, isPending }) =>
-                                                    isPending ? "pending" : isActive ? "active" : ""
-                                                }
-                                            >
-                                                Login
-                                            </NavLink>
-                                        </li>
-                                    </ul>
+                                    
                                 </div>
+                                    </>)
+                                }
                             </div>
                         </li>
                     </ul>
@@ -188,7 +257,7 @@ const NavBar = () => {
 
             {/* text section */}
 
-        
+
 
 
 

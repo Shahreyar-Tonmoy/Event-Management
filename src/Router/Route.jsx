@@ -5,6 +5,8 @@ import Error from '../Error Page/Error';
 import Home from '../Pages/Home/Home';
 import CardInfo from '../Pages/Card/CardInfo';
 import Event from './Body/Event';
+import Register from '../Login/Register';
+import SignIn from '../Login/SignIn';
 
 
 
@@ -34,6 +36,22 @@ const Route = createBrowserRouter([
             path : "/Event",
             element : <Event></Event>,
             loader :()=> fetch("/Event.json")
+            
+            
+            
+        },
+        {
+            path : "/Register",
+            element : <Register></Register>,
+            
+            
+            
+            
+        },
+        {
+            path : "/SignIn",
+           element: <SignIn></SignIn>
+            
             
             
             

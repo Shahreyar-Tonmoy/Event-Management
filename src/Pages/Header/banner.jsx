@@ -30,7 +30,7 @@ const Banner = () => {
 
 
 
-            <div className='grid grid-cols-3 mx-auto max-w-screen-xl pl-12 mt-40'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-screen-xl pl-12 mt-40'>
                 <div data-aos="fade-up-right" className="hero w-96">
                     <div className="hero-overlay bg-opacity-50"></div>
                     <div className="hero-content text-center text-neutral-content">

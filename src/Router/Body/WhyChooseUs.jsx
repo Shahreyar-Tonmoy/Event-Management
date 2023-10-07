@@ -4,10 +4,11 @@
 
 const WhyChooseUs = () => {
     return (
-        <div className="text-center pt-20 bg-[#F3F3F3]">
+       <div className=" ">
+         <div className="text-center pt-20 bg-[#F3F3F3]">
             <h1 className="mb-5 text-3xl font-semibold">Why Choose Us?</h1>
             <h1 className="mb-14">A choice that makes the difference.</h1>
-            <div className="grid grid-cols-3 max-w-screen-xl mx-auto px-20 pb-20">
+            <div className="grid md:grid-cols-2  lg:grid-cols-3 max-w-screen-xl mx-auto px-20 pb-20">
                 <div
                     data-aos="fade-right"
                     data-aos-offset="300"
@@ -57,6 +58,7 @@ const WhyChooseUs = () => {
                 </div>
             </div>
         </div>
+       </div>
     );
 };
 
