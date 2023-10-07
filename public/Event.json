@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "cover": "https://i.ibb.co/cc7hxBh/courses-14-450x233.jpg",
+    "title": "Applying Natural Laws to Technology and Society",
+    "date": "20",
+    "mounth" : "November",
+    "time": " 8:00 Am - 5:00 Pm",
+    "place":"NewYork, USA",
+    "details":"Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris itae erat conuat"
+  },
+ 
+  {
+    "id": 2,
+    "cover": "https://i.ibb.co/GprPVCn/event-2-450x233.jpg",
+    "title": "Managing Time for Study",
+    "date": "30",
+    "mounth" : "November",
+    "time": " 8:00 Am - 5:00 Pm",
+    "place":" Paris, French",
+    "details":"Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris itae erat conuat"
+  }
+ 
+]
