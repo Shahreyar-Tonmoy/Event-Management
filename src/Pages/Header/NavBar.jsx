@@ -24,7 +24,7 @@ const NavBar = () => {
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown dropdown-start">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost text-[#FFB606] lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className=" dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -34,7 +34,7 @@ const NavBar = () => {
                                 <NavLink
                                     to="/"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                     }
                                 >
                                     Home
@@ -47,7 +47,7 @@ const NavBar = () => {
                                 <NavLink
                                     to="/course"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                     }
                                 >
                                     courses
@@ -57,7 +57,7 @@ const NavBar = () => {
                                 <NavLink
                                     to="/Event"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                     }
                                 >
                                     Event
@@ -67,7 +67,7 @@ const NavBar = () => {
                                 <NavLink
                                     to="/Login"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                     }
                                 >
                                     Contact
@@ -77,7 +77,7 @@ const NavBar = () => {
                                 <NavLink
                                     to="/Register"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                     }
                                 >
                                     Register
@@ -91,7 +91,7 @@ const NavBar = () => {
                                     <div className="dropdown dropdown-right">
                                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                             <div className="w-10 rounded-full">
-                                                <img src="/src/assets/Md Mubtashim Shahreyar Tonmoy.png" />
+                                                
                                             </div>
                                         </label>
                                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -115,7 +115,7 @@ const NavBar = () => {
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                 }
                             >
                                 {/* <img className="w-32 md:w-40" src={Logo} alt="" /> */}
@@ -127,7 +127,7 @@ const NavBar = () => {
                         <NavLink
                             to="/"
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                             }
                         >
                             <img className="w-32 md:w-40" src="/src/assets/education-logo-icon.png" alt="" />
@@ -141,7 +141,7 @@ const NavBar = () => {
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                 }
                             >
                                 Home
@@ -151,7 +151,7 @@ const NavBar = () => {
                             <NavLink
                                 to="/course"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                 }
                             >
                                 Courses
@@ -161,34 +161,38 @@ const NavBar = () => {
                             <NavLink
                                 to="/Event"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                 }
                             >
                                 Event
                             </NavLink>
                         </li>
-                        <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
-                            <NavLink
-                                to="/Statistics"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
-                                }
-                            >
-                                Contact
-                            </NavLink>
-                        </li>
+                        {
+                            user && (<>
+                                <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                    <NavLink
+                                        to="/profile"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                        }
+                                    >
+                                        Profile
+                                    </NavLink>
+                                </li>
+                            </>)
+                        }
                         {
                             user ? "" : (<>
-                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
-                            <NavLink
-                                to="/Register"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
-                                }
-                            >
-                                Register
-                            </NavLink>
-                        </li>
+                                <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                    <NavLink
+                                        to="/Register"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                        }
+                                    >
+                                        Register
+                                    </NavLink>
+                                </li>
                             </>)
                         }
                         {
@@ -198,7 +202,7 @@ const NavBar = () => {
                                         <NavLink
                                             to="/SignIn"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                                isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                             }
                                         >
                                             Sign Out
@@ -211,7 +215,7 @@ const NavBar = () => {
                                     <NavLink
                                         to="/SignIn"
                                         className={({ isActive, isPending }) =>
-                                            isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                            isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                         }
                                     >
                                         Sign In
@@ -222,15 +226,15 @@ const NavBar = () => {
                         }
 
                         {
-                            user ?(
+                            user ? (
                                 <>
-                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
-                            {user?.displayName}
-                        </li>
-                            </>
+                                    <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                        {user?.displayName}
+                                    </li>
+                                </>
                             ) : ""
                         }
-                        
+
                         <li>
                             {/* img section */}
                             <div className="flex-none">
@@ -238,14 +242,14 @@ const NavBar = () => {
 
                                 {
                                     user && (<>
-                                    <div className="">
-                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
+                                        <div className="">
+                                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                <div className="w-10 rounded-full">
                                                     <img src={user.photoURL} />
                                                 </div>
-                                    </label>
-                                    
-                                </div>
+                                            </label>
+
+                                        </div>
                                     </>)
                                 }
                             </div>

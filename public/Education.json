@@ -5,7 +5,8 @@
     "cover": "https://i.ibb.co/3WZrVqG/create-an-lms-website-with-learnpress-3-400x300.jpg",
     "name": "Keny White",
     "title": "Create an LMS Website with LearnPress",
-    "price": "Free"
+    "price": "Free",
+    "details" :"Nowadays, LMS (Learning Management System) plays an important part in educating learners for better outcomes. In addition, you make the right choice about LMS and you will reach your final goals. Today, let’s find out about Learning Management System, WordPress, LearnPress, and ways to make a website."
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "cover": "https://i.ibb.co/T25knyh/introduction-learnpress-lms-plugin-2-400x300.jpg",
     "name": "Keny White",
     "title": "Introduction LearnPress – LMS plugin",
-    "price": "Free"
+    "price": "Free",
+    "details" :"LearnPress is a comprehensive WordPress LMS Plugin for WordPress, just like WordPress Moodle or Moodle for WordPress if you know what Moodle is. This is one of the best WordPress LMS Plugins can be used to easily create & sell courses online. Each course curriculum can be made with lessons & quizzes which can be managed with easy-to-use user interface, we really made it for lazy people."
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "cover": "https://i.ibb.co/G7zSkND/react-course-17-400x300.jpg",
     "name": "Keny White",
     "title": "How to teach an online course",
-    "price": "$55"
+    "price": "$55",
+    "details":"The best way to teach online is to engage learners in two-way dialog with your material. Some ways to do this include: Encouraging users to leave comments, questions, and likes on your blog posts. Scheduling problem-solving or discussion groups for assignments to connect course attendees"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "cover": "https://i.ibb.co/pxcTzRH/react-course-14-400x300.jpg",
     "name": "Keny White",
     "title": "How to Create An Online Course",
-    "price": "$30"
+    "price": "$30",
+    "details":"These days, more people are looking for novel types of quality content to explore online, especially when it comes to learning new skills. One way to cater to this rising demand—while also generating revenue—is to create and sell an online course.Imparting knowledge and expertise via an online course will allow you to position yourself as an authority in your field, foster a community of like-minded individuals around your business and expand your reach—all from within your home."
   },
   {
     "id": 5,
@@ -37,13 +41,15 @@
     "cover": "https://i.ibb.co/crRDs8P/course-4-400x300.jpg",
     "name": "Keny White",
     "title": "The Complete Online Teaching Masterclass",
-    "price": "$25"
+    "price": "$25",
+    "details": "Many educators are challenged by a new reality of remote learning induced by the coronavirus lockdown, and to upskill them, teachers are being offered a chance to receive free training in teaching remotely with confidence. The dramatic shift from classroom to online learning since the closure of schools has seen many pupils being disadvantaged considerably, not only because they do not have access to computers, but also because their teachers are ill-equipped for remote teaching. Private higher education institution MANCOSA’s School of Education will be offering a Remote Teaching Masterclass Series, an immersive online experience which will give educators the opportunity to learn from experts in their subjects. "
   },
   {
     "id": 6,
     "picture": "https://i.ibb.co/TLfPGm7/e5c6a6fb8aa3864eacaec471611e0470.jpg",
     "cover": "https://i.ibb.co/H2CK7Hg/course-5-400x300.jpg",
     "name": "Online Course Creation Secrets",
-    "price": "$55"
+    "price": "$55",
+    "details":" massive open online course (MOOC /muːk/) or an open online course is an online course aimed at unlimited participation and open access via the Web.[1] In addition to traditional course materials, such as filmed lectures, readings, and problem sets, many MOOCs provide interactive courses with user forums or social media discussions to support community interactions among students, professors, and teaching assistants (TAs), as well as immediate feedback to quick quizzes and assignments. MOOCs are a widely researched development in distance education,[2] first introduced in 2008,[3] that emerged as a popular mode of learning in 2012, a year called the "
   }
 ]

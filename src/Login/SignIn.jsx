@@ -2,57 +2,64 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { AiFillGoogleCircle } from 'react-icons/ai';
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
 import { AuthContext } from "./Firebase/AuthProvider";
 
 
 
 const SignIn = () => {
     const { signInUser, SignInWithGoogle } = useContext(AuthContext)
-    
+    const location = useLocation()
+    console.log("location in the login page", location);
+
     const navigate = useNavigate()
 
     const hendleSignIn = e => {
         e.preventDefault()
         const email = e.target.email.value
-       
+
         const password = e.target.password.value
         console.log(email, password);
         signInUser(email, password)
             .then(result => {
                 console.log(result.user);
                 e.target.reset()
-                navigate("/")
+                navigate(location?.state ? location?.state : "/")
             })
             .catch(error => {
                 console.log(error.massage);
             })
 
     }
-    const hendleGoogle =() =>{
-        
+    const hendleGoogle = () => {
+
         SignInWithGoogle()
-        .then(result =>{
-            console.log(result.user)
-            if(result.user){
-                navigate("/")
-            }
-           
-            
-        })
-        .catch(error =>{
-            console.log(error.massage);
-        });
+            .then(result => {
+                console.log(result.user)
+                if (result.user) {
+                    navigate(location?.state ? location?.state : "/")
+                }
+
+
+            })
+            .catch(error => {
+                console.log(error.massage);
+            });
 
     }
-    
+
 
 
 
     return (
         <div className="max-w-screen-xl mx-auto flex justify-center mt-20">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
+                    <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
+                        Sign In
+                    </h3>
+                </div>
                 <form
                     onSubmit={hendleSignIn}
                     className="card-body">
@@ -72,13 +79,21 @@ const SignIn = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">Sign In</button>
                     </div>
                 </form>
-                <h1 className="text-center ">Don't have an account? <span><Link to={"/Register"} >Sign Up</Link> </span></h1>
-                <h1 className="text-center">or</h1>
-                <span className="flex justify-center items-center mt-4 mb-10">
-                <AiFillGoogleCircle onClick={hendleGoogle} className="text-4xl"></AiFillGoogleCircle>
+                <h1 className="text-center ">Don't have an account? <span className="font-bold text-pink-500 "><Link to={"/Register"} >Register</Link> </span></h1>
+                <h1 className="text-center text-2xl font-semibold">or</h1>
+                <span className="flex justify-center items-center mt-4 mb-10 flex gap-1">
+                <h1 onClick={hendleGoogle} className="text-2xl cursor-pointer">
+                    <span className="text-[#4285F4] font-semibold">G</span>
+                    <span className="text-[#EA4335] font-semibold">o</span>
+                    <span className="text-[#FBBC05] font-semibold">o</span>
+                    <span className="text-[#4285F4] font-semibold">g</span>
+                    <span className="text-[#34A853] font-semibold">l</span>
+                    <span className="text-[#EA4335] font-semibold">e</span> 
+                    </h1>
+                    
                 </span>
 
 

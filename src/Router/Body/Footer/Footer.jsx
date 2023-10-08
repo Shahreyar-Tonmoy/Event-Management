@@ -2,8 +2,8 @@
 
 const Footer = () => {
     return (
-        <div className="bg-[#bda3a3] text-white mt-20" >
-            <footer className="footer text-white py-10 px-20   max-w-screen-xl mx-auto">
+        <div className="bg-[#bda3a3] text-white mt-20 " >
+            <footer className="footer text-white py-10 lg:px-20   max-w-screen-xl mx-auto">
                 <aside>
                     <img className="w-52" src="/src/assets/education-logo-icon.png" alt="" />
                     <p className="ml-10">ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
@@ -31,7 +31,7 @@ const Footer = () => {
                 </nav>
 
             </footer>
-            <footer className="footer items-center py-4 px-20  max-w-screen-xl mx-auto">
+            <footer className="footer items-center py-4 lg:px-20  max-w-screen-xl mx-auto">
                 <aside className="items-center grid-flow-col">
                 <img className="w-32" src="/src/assets/education-logo-icon.png" alt="" />
                     <p>Copyright © 2023 - All right reserved</p>

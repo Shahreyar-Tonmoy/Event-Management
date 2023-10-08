@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 
 const CardData = ({ cardData }) => {
-    const {picture,cover,title,price,name,} = cardData
+    const {id,picture,cover,title,price,name,} = cardData
 
 
     
@@ -12,7 +14,10 @@ const CardData = ({ cardData }) => {
            
 
             <div>
-                <div data-aos="fade-down-left" className="card rounded-none w-[350px] h-[550px] bg-base-100 shadow-xl"> 
+                <div data-aos="fade-up"
+                    data-aos-offset="300"
+                    data-aos-easing="ease-in-sine"
+                     className="card mx-auto rounded-lg w-[350px] h-[550px] bg-base-100 shadow-xl"> 
                     <figure>
                         <img src={cover} alt="Shoes" /> 
                    </figure>
@@ -22,7 +27,7 @@ const CardData = ({ cardData }) => {
                         <p className="text-center text-xl">{title}</p>
                         <h1 className="text-lg -mb-12 font-semibold text-blue-900">{price}</h1>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <Link to={`/AllCardDetails/${id}`}><button className="px-4 py-2 rounded-lg text-white bg-[#FFB606]">View Details</button></Link>
                         </div>
                     </div>
                 </div>

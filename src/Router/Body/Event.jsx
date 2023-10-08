@@ -16,7 +16,7 @@ const Event = () => {
     }, []);
 
     return (
-        <div className="max-w-screen-xl mx-auto px-20 ">
+        <div className="max-w-screen-xl mx-auto lg:px-20 text-center lg:text-left ">
             <h1 className="text-4xl mt-20 mb-3">Events</h1>
             <h1 className="mb-14">Upcoming Education Events to feed your brain.</h1>
 

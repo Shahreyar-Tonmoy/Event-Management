@@ -4,16 +4,16 @@
 
 const WhyChooseUs = () => {
     return (
-       <div className=" ">
+       <div className=" mb-5  ">
          <div className="text-center pt-20 bg-[#F3F3F3]">
             <h1 className="mb-5 text-3xl font-semibold">Why Choose Us?</h1>
             <h1 className="mb-14">A choice that makes the difference.</h1>
-            <div className="grid md:grid-cols-2  lg:grid-cols-3 max-w-screen-xl mx-auto px-20 pb-20">
+            <div className="grid  md:grid-cols-2  lg:grid-cols-3 max-w-screen-xl mx-auto lg:px-20 lg:pb-20">
                 <div
-                    data-aos="fade-right"
+                    data-aos="fade-up"
                     data-aos-offset="300"
                     data-aos-easing="ease-in-sine"
-                className="relative mt-6 flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl">
+                className="relative mt-6  flex w-80 flex-col rounded-xl mx-auto bg-white bg-clip-border text-gray-700 shadow-xl">
                     <div className="p-6">
                         <img className="mx-auto w-40" src="/src/assets/Screenshot_2023-10-07_101137-removebg-preview.png" alt="" />
                         <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
@@ -28,7 +28,7 @@ const WhyChooseUs = () => {
                 <div
                     data-aos="fade-up"
                     data-aos-anchor-placement="top-bottom"
-                className="relative mt-6 flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl">
+                className="relative mt-6 flex w-80 flex-col rounded-xl mx-auto bg-white bg-clip-border text-gray-700 shadow-xl">
                     <div className="p-6">
                         <img className="mx-auto" src="/src/assets/Screenshot_2023-10-07_103624-removebg-preview.png" alt="" />
                         <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
@@ -41,10 +41,10 @@ const WhyChooseUs = () => {
                     
                 </div>
                 <div 
-                    data-aos="fade-left"
+                    data-aos="fade-up"
                     data-aos-offset="300"
                     data-aos-easing="ease-in-sine"
-                className="relative mt-6 flex w-80 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-xl">
+                className="relative mt-6 flex w-80 flex-col rounded-xl mx-auto bg-white bg-clip-border text-gray-700 shadow-xl">
                     <div className="p-6">
                         <img className="mx-auto" src="/src/assets/Screenshot_2023-10-07_103627-removebg-preview.png" alt="" />
                         <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">

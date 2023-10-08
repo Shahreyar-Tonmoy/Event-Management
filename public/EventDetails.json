@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "cover": "https://i.ibb.co/cc7hxBh/courses-14-450x233.jpg",
+    "title": "Applying Natural Laws to Technology and Society",
+    "date": "20",
+    "mounth": "November",
+    "time": " 8:00 Am - 5:00 Pm",
+    "place": "NewYork, USA",
+    "details": "Technology and Culture is the quarterly interdisciplinary journal of the Society for the History of Technology. The international journal publishes the work of historians, engineers, scientists, museum curators, archivists, sociologists, anthropologists, and others, on topics ranging from agriculture to zippers. Technology and Culture regularly includes scholarly articles, book reviews, museum exhibit reviews, and critical essays. The society's Current Bibliography in the History of Technology also appears under the banner of Technology and Culture."
+  },
+  {
+    "id": 2,
+    "cover": "https://i.ibb.co/GprPVCn/event-2-450x233.jpg",
+    "title": "Managing Time for Study",
+    "date": "30",
+    "mounth": "November",
+    "time": " 8:00 Am - 5:00 Pm",
+    "place": " Paris, French",
+    "details": "Goals are an excellent way to get you motivated to do school work. However, the problem is that goals are just the result, with you not knowing how to achieve them. So, focus on what needs to be done to achieve that goal by focusing on constant progress and developing better habits. For example, if you need to write a 5,000-word essay in a month, set a daily goal of writing 500 words. If you continue this, you can complete your essay in a week."
+  }
+]
