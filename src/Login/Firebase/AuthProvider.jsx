@@ -12,6 +12,8 @@ import {
     signOut,
     signInWithPopup,
     onAuthStateChanged,
+    updateProfile,
+
 
 
 } from "firebase/auth";
@@ -30,9 +32,15 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
-    const signInUser =(email,password)=>{
+
+    const updateUserInfo = (profile) => {
+        return updateProfile(auth.currentUser, profile)
+    }
+    // console.log(user);
+
+    const signInUser = (email, password) => {
         setLoading(true)
-        return signInWithEmailAndPassword(auth,email,password)
+        return signInWithEmailAndPassword(auth, email, password)
     }
     const SignInWithGoogle = () => {
         setLoading(true)
@@ -42,40 +50,41 @@ const AuthProvider = ({ children }) => {
         setLoading(true)
         return signOut(auth)
     }
-    useEffect(()=>{
-        const unSubscribe = onAuthStateChanged(auth, currentUser=>{
-            
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+
             setUser(currentUser)
             setLoading(false)
         })
-        return ()=>{
+        return () => {
             unSubscribe()
         }
 
 
-    },[])
+    }, [])
 
 
 
 
-const AuthInfo = {
-    
-    user,
-    SignInWithGoogle,
-    loading,
-    createUser,
-    signInUser,
-    logOut,
-}
+    const AuthInfo = {
 
-return (
-    <AuthContext.Provider value={AuthInfo}>
-        {children}
-    </AuthContext.Provider>
-);
+        user,
+        SignInWithGoogle,
+        loading,
+        createUser,
+        signInUser,
+        logOut,
+        updateUserInfo,
+    }
+
+    return (
+        <AuthContext.Provider value={AuthInfo}>
+            {children}
+        </AuthContext.Provider>
+    );
 };
 
 export default AuthProvider;
-AuthProvider.propTypes ={
-    children : PropTypes.node,
+AuthProvider.propTypes = {
+    children: PropTypes.node,
 }

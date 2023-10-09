@@ -13,7 +13,7 @@ const ContactUs = () => {
                     <h2 className=" text-2xl mt-2">Education Institute</h2>
                     <h1 className="text-lg mt-2"> 3096 Progress Way, Tripoli,United States</h1>
                     <h1 className="mt-2">(+1)319-882-9011</h1>
-                    <h1 className="mt-2">{user.email}</h1>
+                    <h1 className="mt-2">shahreyartonmoy@gmail.com</h1>
 
                     
                 </div>

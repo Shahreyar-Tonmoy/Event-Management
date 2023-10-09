@@ -10,76 +10,104 @@ import swal from 'sweetalert';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserInfo } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
-    const [error,setError]=useState("")
-    const [errorMassage,setErrorMassage] = useState()
-    
+    const [error, setError] = useState("")
+    const [errorMassage, setErrorMassage] = useState()
+
 
     const hendleSignIn = e => {
         e.preventDefault()
         const email = e.target.email.value
-       
-        const password = e.target.password.value
 
-        if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}/.test(password)){
+        const password = e.target.password.value
+        const name = e.target.name.value
+        const photo = e.target.photo.value
+
+        if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}/.test(password)) {
             setError("Minimum eight characters, at least one letter, one number and one special character");
-            swal("Error!", `Minimum eight characters, at least one letter, one number and one special character` , "error");
-            
+            swal("Error!", `Minimum eight characters, at least one letter, one number and one special character`, "error");
+
         }
-        else{
+        else {
             setError("")
-            if(email){
+            if (email) {
                 createUser(email, password)
-                .then(result => {
-                    console.log(result.user);
-                    if(result.user){
-                        swal("Thanks For!", "Register!", "success");
-    
-                    }
-                    e.target.reset()
-                    navigate(location?.state ? location?.state : "/")
-                    
-                    
-                })
-                .catch(error => {
-                    setErrorMassage(error.message);
-                    console.log(errorMassage);
-                    if(error){
-                        swal("Error!", errorMassage ,    "error");
-                    }
-                     
-                    
-                })
-                
+                    .then(result => {
+
+
+
+                        if (result.user) {
+                            swal("Thanks For!", "Register!", "success");
+                            updateUserInfo({
+                                displayName: name, photoURL: photo
+                            })
+                            
+                                // .then(res => {
+                                //     if (res) {
+                                        
+                                       
+                                //     }
+                                // })
+                                e.target.reset()
+                                 navigate(location?.state ? location?.state : "/")
+
+
+                        }
+
+
+
+                    })
+                    .catch(error => {
+                        setErrorMassage(error.message);
+                        setErrorMassage(errorMassage);
+                        if (error) {
+                            swal("Error!", errorMassage, "error");
+                        }
+
+
+                    })
+
             }
 
         }
 
-        
+
 
 
         console.log(email, password);
 
-        
+
 
     }
-   
+
 
 
 
     return (
         <div className="max-w-screen-xl mx-auto flex justify-center mt-20">
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
+                <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
                     <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
-                    Register
+                        Register
                     </h3>
                 </div>
                 <form
                     onSubmit={hendleSignIn}
                     className="card-body">
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="text" name="name" placeholder="name" className="input input-bordered" required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">PhotoURL</span>
+                        </label>
+                        <input type="text" name="photo" placeholder="PhotoURL" className="input input-bordered" required />
+                    </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -100,7 +128,7 @@ const Register = () => {
                     </div>
                 </form>
                 <h1 className="text-center mb-10 ">Don't have an account? <span className="text-pink-500 font-bold"><Link to={"/SignIn"} >Sign In</Link> </span></h1>
-                
+
 
 
             </div>

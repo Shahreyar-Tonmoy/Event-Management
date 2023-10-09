@@ -67,19 +67,29 @@ const NavBar = () => {
                                 </NavLink>
                             </li>
                             {
-                                user && (<>
-                                    <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
-                                        <NavLink
-                                            to="/profile"
-                                            className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
-                                            }
-                                        >
-                                            Profile
-                                        </NavLink>
-                                    </li>
-                                </>)
-                            }
+                            user && (<>
+                                <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                    <NavLink
+                                        to="/profile"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                        }
+                                    >
+                                        Profile
+                                    </NavLink>
+                                </li>
+                                <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                    <NavLink
+                                        to="/contactus"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                        }
+                                    >
+                                        About Us
+                                    </NavLink>
+                                </li>
+                            </>)
+                        }
 
                             {
                                 user ? "" : (<>
@@ -183,7 +193,7 @@ const NavBar = () => {
 
                 </div>
                 <div className="navbar-end  hidden lg:flex">
-                    <ul className="ml-auto  mr-8 hidden items-center gap-6 lg:flex">
+                    <ul className="ml-auto  mr-8 hidden items-center gap-2 lg:flex">
                         <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                             <NavLink
                                 to="/"
@@ -233,7 +243,7 @@ const NavBar = () => {
                                             isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                         }
                                     >
-                                        Contact Us
+                                        About Us
                                     </NavLink>
                                 </li>
                             </>)

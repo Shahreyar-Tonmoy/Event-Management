@@ -22,21 +22,13 @@ const SignIn = () => {
     const navigate = useNavigate()
 
     const hendleSignIn = e => {
-        const [error, setError] = useState("")
+       
 
         e.preventDefault()
         const email = e.target.email.value
 
         const password = e.target.password.value
-        if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}/.test(password)) {
-            setError("Minimum eight characters, at least one letter, one number and one special character");
-            swal("Error!", `Minimum eight characters, at least one letter, one number and one special character`, "error");
-
-        }
-        else {
-            setError("")
-                if(email){
-                    signInUser(email, password)
+        signInUser(email, password)
                 .then(result => {
                     console.log(result.user);
                     if (result.user) {
@@ -47,23 +39,13 @@ const SignIn = () => {
                     navigate(location?.state ? location?.state : "/")
                 })
                 .catch(error => {
-                    setErrorMassage(error.message);
-                    console.log(errorMassage);
+                    
                     if(error){
-                        swal("Error!", errorMassage ,    "error");
+                        swal("Error!", "Invalid email or password" ,    "error");
                     }
                      
                     
                 })
-                }
-            // .catch(error => {
-            //     console.log(error.massage);
-            //     if(error.massage){
-            //         swal("Error!", error.massage , "error");
-            //     }
-
-            // })
-        }
 
 
 

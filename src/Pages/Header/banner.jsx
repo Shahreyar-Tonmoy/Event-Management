@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 
 const Banner = () => {
     return (
-        <div style={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundImage: `url(${backgroundImage})` }} className='h-screen -mt-24' >
+        <div style={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundImage: `url(${backgroundImage})` }} className='h-screen -mt-[103px]' >
                 <div className=' flex justify-center items-center pt-64 '>
                    
                 <TypeAnimation className='text-3xl lg:text-[60px] text-white inline-block'
