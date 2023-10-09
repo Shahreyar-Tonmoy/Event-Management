@@ -43,15 +43,9 @@ const Register = () => {
                             updateUserInfo({
                                 displayName: name, photoURL: photo
                             })
-                            
-                                // .then(res => {
-                                //     if (res) {
-                                        
-                                       
-                                //     }
-                                // })
-                                e.target.reset()
-                                 navigate(location?.state ? location?.state : "/")
+
+                            e.target.reset()
+                            navigate(location?.state ? location?.state : "/")
 
 
                         }
