@@ -181,13 +181,13 @@ const NavBar = () => {
                     </li>
 
                 </div>
-                <div className="navbar-end hidden lg:flex">
-                    <ul className="ml-auto mr-8 hidden items-center gap-6 lg:flex">
+                <div className="navbar-end  hidden lg:flex">
+                    <ul className="ml-auto  mr-8 hidden items-center gap-6 lg:flex">
                         <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                             <NavLink
                                 to="/"
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                    isPending ? "pending" : isActive ? "text-[#FFB606]  underline" : ""
                                 }
                             >
                                 Home
@@ -223,6 +223,16 @@ const NavBar = () => {
                                         }
                                     >
                                         Profile
+                                    </NavLink>
+                                </li>
+                                <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                    <NavLink
+                                        to="/contactus"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                        }
+                                    >
+                                        Contact Us
                                     </NavLink>
                                 </li>
                             </>)

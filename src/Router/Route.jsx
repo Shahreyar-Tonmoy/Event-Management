@@ -11,6 +11,7 @@ import CardDetails from '../View Details/CardDetails';
 import PrivateRoute from '../Login/PrivateRoute';
 import AllCardDetails from '../Pages/Card/AllCardDetails';
 import Profile from '../Pages/Header/Profile';
+import ContactUs from '../Pages/Header/ContactUs';
 
 
 
@@ -84,6 +85,14 @@ const Route = createBrowserRouter([
         {
             path : "/profile",
            element: <Profile></Profile>
+            
+            
+            
+            
+        },
+        {
+            path : "/contactus",
+           element: <ContactUs></ContactUs>
             
             
             
