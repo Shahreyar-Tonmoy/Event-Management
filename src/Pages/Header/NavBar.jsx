@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Login/Firebase/AuthProvider';
+import icon from '/Assignment/Assignment-09/src/assets/logo.png'
 
 
 const NavBar = () => {
@@ -164,12 +165,12 @@ const NavBar = () => {
                                     isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
                                 }
                             >
-                                {/* <img className="w-32 md:w-40" src={Logo} alt="" /> */}
+                                <img className="w-32 md:w-40" src={icon} alt="" />
                             </NavLink>
                         </li>
 
                     </li>
-                    <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                    {/* <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
                         <NavLink
                             to="/"
                             className={({ isActive, isPending }) =>
@@ -178,7 +179,7 @@ const NavBar = () => {
                         >
                             <img className="w-32 md:w-40" src="/src/assets/education-logo-icon.png" alt="" />
                         </NavLink>
-                    </li>
+                    </li> */}
 
                 </div>
                 <div className="navbar-end  hidden lg:flex">

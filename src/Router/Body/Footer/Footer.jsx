@@ -1,11 +1,11 @@
-
+import icon from '/Assignment/Assignment-09/src/assets/logo.png'
 
 const Footer = () => {
     return (
         <div className="bg-[#bda3a3] text-white mt-20 " >
             <footer className="footer text-white py-10 lg:px-20   max-w-screen-xl mx-auto">
                 <aside>
-                    <img className="w-52" src="/src/assets/education-logo-icon.png" alt="" />
+                    <img className="w-52" src={icon} alt="" />
                     <p className="ml-10">ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
                 </aside>
                 <nav>
@@ -33,7 +33,7 @@ const Footer = () => {
             </footer>
             <footer className="footer items-center py-4 lg:px-20  max-w-screen-xl mx-auto">
                 <aside className="items-center grid-flow-col">
-                <img className="w-32" src="/src/assets/education-logo-icon.png" alt="" />
+                <img className="w-32" src={icon} alt="" />
                     <p>Copyright © 2023 - All right reserved</p>
                 </aside>
                 <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

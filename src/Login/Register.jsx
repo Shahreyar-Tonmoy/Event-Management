@@ -24,7 +24,7 @@ const Register = () => {
 
         if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}/.test(password)){
             setError("Minimum eight characters, at least one letter, one number and one special character");
-            swal("Error!", `${error}` , "error");
+            swal("Error!", `Minimum eight characters, at least one letter, one number and one special character` , "error");
             
         }
         else{

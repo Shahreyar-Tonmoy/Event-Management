@@ -1,5 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
+import icon1 from '/Assignment/Assignment-09/src/assets/icon4.png'
+import icon2 from '/Assignment/Assignment-09/src/assets/icon5.png'
+import icon3 from '/Assignment/Assignment-09/src/assets/icon6.png'
 
 
 const WhyChooseUs = () => {
@@ -15,7 +18,7 @@ const WhyChooseUs = () => {
                     data-aos-easing="ease-in-sine"
                 className="relative mt-6  flex w-80 flex-col rounded-xl mx-auto bg-white bg-clip-border text-gray-700 shadow-xl">
                     <div className="p-6">
-                        <img className="mx-auto w-40" src="/src/assets/Screenshot_2023-10-07_101137-removebg-preview.png" alt="" />
+                        <img className="mx-auto w-40" src={icon1} alt="" />
                         <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         Highly Experienced
                         </h5>
@@ -30,7 +33,7 @@ const WhyChooseUs = () => {
                     data-aos-anchor-placement="top-bottom"
                 className="relative mt-6 flex w-80 flex-col rounded-xl mx-auto bg-white bg-clip-border text-gray-700 shadow-xl">
                     <div className="p-6">
-                        <img className="mx-auto" src="/src/assets/Screenshot_2023-10-07_103624-removebg-preview.png" alt="" />
+                        <img className="mx-auto" src={icon2} alt="" />
                         <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         Question, Quiz & Course
                         </h5>
@@ -46,7 +49,7 @@ const WhyChooseUs = () => {
                     data-aos-easing="ease-in-sine"
                 className="relative mt-6 flex w-80 flex-col rounded-xl mx-auto bg-white bg-clip-border text-gray-700 shadow-xl">
                     <div className="p-6">
-                        <img className="mx-auto" src="/src/assets/Screenshot_2023-10-07_103627-removebg-preview.png" alt="" />
+                        <img className="mx-auto" src={icon3} alt="" />
                         <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         Dedicated Support
                         </h5>
