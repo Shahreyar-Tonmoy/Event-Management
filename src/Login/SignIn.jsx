@@ -1,35 +1,68 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/no-unknown-property */
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import swal from 'sweetalert';
 
 import { AuthContext } from "./Firebase/AuthProvider";
+
+
 
 
 
 const SignIn = () => {
     const { signInUser, SignInWithGoogle } = useContext(AuthContext)
     const location = useLocation()
-    console.log("location in the login page", location);
+    
 
     const navigate = useNavigate()
 
     const hendleSignIn = e => {
+        const [error, setError] = useState("")
+
         e.preventDefault()
         const email = e.target.email.value
 
         const password = e.target.password.value
-        console.log(email, password);
-        signInUser(email, password)
+        if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}/.test(password)) {
+            setError("Minimum eight characters, at least one letter, one number and one special character");
+            swal("Error!", `${error}`, "error");
+
+        }
+        else {
+            setError("")
+            signInUser(email, password)
             .then(result => {
                 console.log(result.user);
-                e.target.reset()
+                if (result.user) {
+                    swal("Good job!", "You are sign in!", "success");
+
+                }
+               
                 navigate(location?.state ? location?.state : "/")
             })
-            .catch(error => {
-                console.log(error.massage);
-            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log(errorMessage);
+              });
+            // .catch(error => {
+            //     console.log(error.massage);
+            //     if(error.massage){
+            //         swal("Error!", error.massage , "error");
+            //     }
+
+            // })
+        }
+            
+
+        
+        console.log(email, password);
+
+        
 
     }
     const hendleGoogle = () => {
@@ -38,6 +71,10 @@ const SignIn = () => {
             .then(result => {
                 console.log(result.user)
                 if (result.user) {
+                    swal("Good job!", "You are sign in with google!", "success");
+
+                }
+                if (result.user) {
                     navigate(location?.state ? location?.state : "/")
                 }
 
@@ -45,6 +82,9 @@ const SignIn = () => {
             })
             .catch(error => {
                 console.log(error.massage);
+                if (error.massage) {
+                    swal("Error!", `{${error.massage}}`, "error");
+                }
             });
 
     }
@@ -84,16 +124,16 @@ const SignIn = () => {
                 </form>
                 <h1 className="text-center ">Don't have an account? <span className="font-bold text-pink-500 "><Link to={"/Register"} >Register</Link> </span></h1>
                 <h1 className="text-center text-2xl font-semibold">or</h1>
-                <span className="flex justify-center items-center mt-4 mb-10 flex gap-1">
-                <h1 onClick={hendleGoogle} className="text-2xl cursor-pointer">
-                    <span className="text-[#4285F4] font-semibold">G</span>
-                    <span className="text-[#EA4335] font-semibold">o</span>
-                    <span className="text-[#FBBC05] font-semibold">o</span>
-                    <span className="text-[#4285F4] font-semibold">g</span>
-                    <span className="text-[#34A853] font-semibold">l</span>
-                    <span className="text-[#EA4335] font-semibold">e</span> 
+                <span className="flex justify-center items-center mt-4 mb-10  gap-1">
+                    <h1 onClick={hendleGoogle} className="text-2xl cursor-pointer">
+                        <span className="text-[#4285F4] font-semibold">G</span>
+                        <span className="text-[#EA4335] font-semibold">o</span>
+                        <span className="text-[#FBBC05] font-semibold">o</span>
+                        <span className="text-[#4285F4] font-semibold">g</span>
+                        <span className="text-[#34A853] font-semibold">l</span>
+                        <span className="text-[#EA4335] font-semibold">e</span>
                     </h1>
-                    
+
                 </span>
 
 

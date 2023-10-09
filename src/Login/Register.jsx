@@ -2,17 +2,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AiFillGoogleCircle } from 'react-icons/ai';
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Firebase/AuthProvider";
-
+import swal from 'sweetalert';
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
+    const [error,setError]=useState("")
     
 
     const hendleSignIn = e => {
@@ -20,17 +21,39 @@ const Register = () => {
         const email = e.target.email.value
        
         const password = e.target.password.value
+
+        if(!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}/.test(password)){
+            setError("Minimum eight characters, at least one letter, one number and one special character");
+            swal("Error!", `${error}` , "error");
+            
+        }
+        else{
+            setError("")
+            if(email){
+                createUser(email, password)
+                .then(result => {
+                    console.log(result.user);
+                    if(result.user){
+                        swal("Thanks For!", "Register!", "success");
+    
+                    }
+                    e.target.reset()
+                    navigate(location?.state ? location?.state : "/")
+                    
+                })
+                .catch(error => {
+                    console.log(error.massage);
+                })
+            }
+
+        }
+
+        
+
+
         console.log(email, password);
-        createUser(email, password)
-            .then(result => {
-                console.log(result.user);
-                e.target.reset()
-                navigate(location?.state ? location?.state : "/")
-                
-            })
-            .catch(error => {
-                console.log(error.massage);
-            })
+
+        
 
     }
    

@@ -6,7 +6,7 @@ const Banner = () => {
         <div style={{ backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundImage: `url(${backgroundImage})` }} className='h-screen -mt-24' >
                 <div className=' flex justify-center items-center pt-64 '>
                    
-                <TypeAnimation className='text-2xl lg:text-[60px] text-white inline-block'
+                <TypeAnimation className='text-3xl lg:text-[60px] text-white inline-block'
                     sequence={[
                         // Same substring at the start will only be typed out once, initially
                         'Future Educators',
@@ -30,7 +30,7 @@ const Banner = () => {
 
 
 
-            <div className='invisible lg:visible grid  md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-screen-xl pl-12 mt-40'>
+            {/* <div className='invisible lg:visible grid  md:grid-cols-2 lg:grid-cols-3 mx-auto max-w-screen-xl pl-12 mt-40'>
                 <div data-aos="fade-up-right" className="hero w-96 ">
                     <div className="hero-overlay bg-opacity-50 rounded-xl"></div>
                     <div className="hero-content text-center text-neutral-content">
@@ -60,7 +60,7 @@ const Banner = () => {
                 </div>
                 
                 
-            </div>
+            </div> */}
 
         </div>
     );

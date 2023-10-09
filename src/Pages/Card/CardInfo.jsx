@@ -7,7 +7,7 @@ const CardInfo = () => {
     
     return (
        <div>
-             <div className="max-w-screen-xl mx-auto lg:px-20 ">
+             <div className="max-w-screen-xl mx-auto text-center lg:text-left lg:px-20 ">
              <h1 className="text-3xl font-semibold mt-36">Popular Course</h1>
             <p className="text-lg mt-3 mb-10">Limitless learning, more possibilities</p>
              </div>

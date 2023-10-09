@@ -3,6 +3,7 @@ import { AuthContext } from "../../Login/Firebase/AuthProvider";
 
 const Profile = () => {
     const { user } = useContext(AuthContext)
+    
 
     return (
         <div className="flex justify-center items-center mt-20">

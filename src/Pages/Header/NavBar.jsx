@@ -7,6 +7,7 @@ import { AuthContext } from '../../Login/Firebase/AuthProvider';
 const NavBar = () => {
 
     const { user, logOut } = useContext(AuthContext)
+    
 
     const hendleSignOut = () => {
         logOut()
@@ -19,6 +20,7 @@ const NavBar = () => {
 
     return (
         <div>
+            
 
 
             <div className="navbar">
@@ -63,51 +65,95 @@ const NavBar = () => {
                                     Event
                                 </NavLink>
                             </li>
-                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
-                                <NavLink
-                                    to="/Login"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
-                                    }
-                                >
-                                    Contact
-                                </NavLink>
-                            </li>
-                            <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
-                                <NavLink
-                                    to="/Register"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
-                                    }
-                                >
-                                    Register
-                                </NavLink>
-                            </li>
-                            <li>
-                                <div className="flex-none">
-                                    <div className="dropdown dropdown-end">
+                            {
+                                user && (<>
+                                    <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                        <NavLink
+                                            to="/profile"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                            }
+                                        >
+                                            Profile
+                                        </NavLink>
+                                    </li>
+                                </>)
+                            }
 
-                                    </div>
-                                    <div className="dropdown dropdown-right">
-                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                            <div className="w-10 rounded-full">
-                                                
-                                            </div>
-                                        </label>
-                                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            {
+                                user ? "" : (<>
+                                    <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                        <NavLink
+                                            to="/Register"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                            }
+                                        >
+                                            Register
+                                        </NavLink>
+                                    </li>
+                                </>)
+                            }
 
-                                            <li><NavLink to="/Profile"
-                                                className={({ isActive, isPending }) =>
-                                                    isPending ? "pending" : isActive ? "active" : ""
-                                                }
-                                            >
-                                                Profile
-                                            </NavLink></li>
+{
+                            user ? (
+                                <>
+                                    <li onClick={hendleSignOut} className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                        <NavLink
+                                            to="/SignIn"
+                                            className={({ isActive, isPending }) =>
+                                                isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                            }
+                                        >
+                                            Sign Out
+                                        </NavLink>
+                                    </li>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
+                                </>
+                            ) : (<>
+                                <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                    <NavLink
+                                        to="/SignIn"
+                                        className={({ isActive, isPending }) =>
+                                            isPending ? "pending" : isActive ? "text-[#FFB606] underline" : ""
+                                        }
+                                    >
+                                        Sign In
+                                    </NavLink>
+                                </li>
+
+                            </>)
+                        }
+
+{
+                            user ? (
+                                <>
+                                    <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
+                                        {user?.displayName}
+                                    </li>
+                                </>
+                            ) : ""
+                        }
+
+                        <li>
+                            {/* img section */}
+                            <div className="flex-none">
+
+
+                                {
+                                    user && (<>
+                                        <div className="">
+                                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                <div className="w-10 rounded-full">
+                                                    <img src={user?.photoURL} />
+                                                </div>
+                                            </label>
+
+                                        </div>
+                                    </>)
+                                }
+                            </div>
+                        </li>
                         </ul>
                     </div>
                     <li className="block p-1 font-sans text-lg font-bold leading-normal text-inherit antialiased">
@@ -245,7 +291,8 @@ const NavBar = () => {
                                         <div className="">
                                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                                 <div className="w-10 rounded-full">
-                                                    <img src={user.photoURL} />
+                                                    <img src={user?.photoURL} />
+                                                    
                                                 </div>
                                             </label>
 
