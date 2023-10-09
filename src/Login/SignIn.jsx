@@ -16,7 +16,8 @@ import { AuthContext } from "./Firebase/AuthProvider";
 const SignIn = () => {
     const { signInUser, SignInWithGoogle } = useContext(AuthContext)
     const location = useLocation()
-    
+    const [errorMassage,setErrorMassage] =useState()
+
 
     const navigate = useNavigate()
 
@@ -29,26 +30,32 @@ const SignIn = () => {
         const password = e.target.password.value
         if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}/.test(password)) {
             setError("Minimum eight characters, at least one letter, one number and one special character");
-            swal("Error!", `${error}`, "error");
+            swal("Error!", `Minimum eight characters, at least one letter, one number and one special character`, "error");
 
         }
         else {
             setError("")
-            signInUser(email, password)
-            .then(result => {
-                console.log(result.user);
-                if (result.user) {
-                    swal("Good job!", "You are sign in!", "success");
+                if(email){
+                    signInUser(email, password)
+                .then(result => {
+                    console.log(result.user);
+                    if (result.user) {
+                        swal("Good job!", "You are sign in!", "success");
 
+                    }
+
+                    navigate(location?.state ? location?.state : "/")
+                })
+                .catch(error => {
+                    setErrorMassage(error.message);
+                    console.log(errorMassage);
+                    if(error){
+                        swal("Error!", errorMassage ,    "error");
+                    }
+                     
+                    
+                })
                 }
-               
-                navigate(location?.state ? location?.state : "/")
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorMessage);
-              });
             // .catch(error => {
             //     console.log(error.massage);
             //     if(error.massage){
@@ -57,12 +64,12 @@ const SignIn = () => {
 
             // })
         }
-            
 
-        
+
+
         console.log(email, password);
 
-        
+
 
     }
     const hendleGoogle = () => {

@@ -14,6 +14,7 @@ const Register = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const [error,setError]=useState("")
+    const [errorMassage,setErrorMassage] = useState()
     
 
     const hendleSignIn = e => {
@@ -40,10 +41,18 @@ const Register = () => {
                     e.target.reset()
                     navigate(location?.state ? location?.state : "/")
                     
+                    
                 })
                 .catch(error => {
-                    console.log(error.massage);
+                    setErrorMassage(error.message);
+                    console.log(errorMassage);
+                    if(error){
+                        swal("Error!", errorMassage ,    "error");
+                    }
+                     
+                    
                 })
+                
             }
 
         }
